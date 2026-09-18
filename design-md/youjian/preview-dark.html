@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>柚见下载 · dark catalog</title>
+  <style>
+    :root {
+      --green: #16a34a;
+      --green-dark: #15803d;
+      --ink: #020617;
+      --surface: #0f172a;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --line: #1e293b;
+      --font: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: var(--font); background: var(--ink); color: var(--text); }
+    .wrap { max-width: 1152px; margin: 0 auto; padding: 48px 24px 80px; }
+    h1.page { font-size: 32px; margin: 0 0 8px; letter-spacing: -0.03em; }
+    .meta { color: var(--muted); margin: 0 0 40px; }
+    .note {
+      border: 1px solid var(--line); background: var(--surface); border-radius: 8px;
+      padding: 16px 20px; color: var(--muted); font-size: 14px; line-height: 1.7;
+    }
+    h2.sec { font-size: 22px; margin: 48px 0 16px; }
+    .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
+    .swatch { border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: var(--surface); }
+    .swatch .chip { height: 72px; }
+    .swatch p { margin: 0; padding: 8px 10px; font-size: 12px; color: var(--muted); }
+    .swatch strong { display: block; color: var(--text); font-size: 13px; }
+    .auth { background: var(--green); color: #fff; border: 0; border-radius: 8px; padding: 8px 16px; font-weight: 600; }
+    .ghost { background: transparent; color: var(--muted); border: 1px solid var(--line); border-radius: 8px; padding: 10px 16px; }
+    .ghost:hover { color: #fff; }
+    .row { display: flex; gap: 12px; flex-wrap: wrap; }
+    .cols { display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px; font-size: 14px; }
+    .cols h3 { color: #fff; font-size: 14px; margin: 0 0 16px; }
+    .cols a { display: block; color: var(--muted); text-decoration: none; padding-bottom: 10px; }
+    .bar { border-top: 1px solid var(--line); margin-top: 32px; padding-top: 20px; color: #64748b; font-size: 13px; }
+    .mask {
+      margin-top: 24px; background: rgba(0,0,0,.45); border-radius: 8px; padding: 32px;
+      display: grid; place-items: center;
+    }
+    .dialog {
+      background: #fff; color: #0f172a; width: min(420px, 100%); border-radius: 16px; padding: 20px; text-align: center;
+    }
+    @media (max-width: 720px) { .cols { grid-template-columns: 1fr 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1 class="page">柚见下载 · dark catalog</h1>
+    <p class="meta">C 端没有整页 dark mode。深色只出现在页脚和弹层遮罩。本页只校这些现网 token，不要据此把落地页改成黑底。</p>
+    <p class="note">Shipped dark surfaces: footer <code>#020617</code>, bar text <code>#64748b</code>, links <code>#94a3b8</code> hover white, mask <code>rgba(0,0,0,.45)</code>, dialog stays white <code>#fff</code> radius 16.</p>
+
+    <h2 class="sec">Footer tokens</h2>
+    <div class="swatches">
+      <div class="swatch"><div class="chip" style="background:#020617"></div><p><strong>footer bg</strong>#020617</p></div>
+      <div class="swatch"><div class="chip" style="background:#0f172a"></div><p><strong>text / surface</strong>#0f172a</p></div>
+      <div class="swatch"><div class="chip" style="background:#cbd5e1"></div><p><strong>footer body</strong>#cbd5e1</p></div>
+      <div class="swatch"><div class="chip" style="background:#94a3b8"></div><p><strong>footer link</strong>#94a3b8</p></div>
+      <div class="swatch"><div class="chip" style="background:#64748b"></div><p><strong>footer bar</strong>#64748b</p></div>
+      <div class="swatch"><div class="chip" style="background:#1e293b"></div><p><strong>footer line</strong>#1e293b</p></div>
+      <div class="swatch"><div class="chip" style="background:#16a34a"></div><p><strong>green still</strong>#16a34a</p></div>
+    </div>
+
+    <h2 class="sec">Footer layout</h2>
+    <div class="cols">
+      <div>
+        <strong style="color:#fff;font-size:20px">柚见下载</strong>
+        <p style="color:#94a3b8">在线视频图片保存工具。贴上链接，下载无水印视频和图片。</p>
+      </div>
+      <div><h3>说明</h3><a href="#">使用教程</a><a href="#">支持平台</a><a href="#">常见问题</a></div>
+      <div><h3>关于</h3><a href="#">隐私政策</a><a href="#">服务条款</a></div>
+      <div><h3>联系</h3><a href="#">联系作者</a><a href="#">交流群</a></div>
+      <div><h3>账号</h3><button class="auth" type="button">登录</button></div>
+    </div>
+    <div class="bar">© 2026 柚见下载. All Rights Reserved.</div>
+
+    <h2 class="sec">Overlay</h2>
+    <div class="mask">
+      <div class="dialog">
+        <h3 style="margin:0 0 12px">登录</h3>
+        <p style="color:#475569;font-size:13px">弹层永远是白底。遮罩才是暗的。</p>
+        <div class="row" style="justify-content:center;margin-top:16px">
+          <button class="auth" type="button">登录</button>
+          <button class="ghost" type="button">关闭</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

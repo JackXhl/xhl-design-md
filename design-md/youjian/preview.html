@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>柚见下载 · DESIGN.md preview</title>
+  <style>
+    :root {
+      --green: #16a34a;
+      --green-dark: #15803d;
+      --green-soft: #ecfdf3;
+      --ink: #020617;
+      --text: #0f172a;
+      --muted: #475569;
+      --fine: #64748b;
+      --line: #e2e8f0;
+      --canvas: #ffffff;
+      --band: #f8fafc;
+      --danger: #dc2626;
+      --radius: 8px;
+      --font: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: var(--font);
+      color: var(--text);
+      background: var(--canvas);
+      line-height: 1.5;
+    }
+    .wrap { max-width: 1152px; margin: 0 auto; padding: 48px 24px 80px; }
+    h1.page { font-size: 32px; letter-spacing: -0.03em; margin: 0 0 8px; }
+    .meta { color: var(--muted); margin: 0 0 40px; }
+    h2.sec { font-size: 22px; margin: 48px 0 16px; letter-spacing: -0.02em; }
+    .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
+    .swatch { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+    .swatch .chip { height: 72px; }
+    .swatch p { margin: 0; padding: 8px 10px; font-size: 12px; color: var(--muted); }
+    .swatch strong { display: block; color: var(--text); font-size: 13px; }
+    .type-row { padding: 16px 0; border-bottom: 1px solid var(--line); }
+    .type-row .label { font-size: 12px; color: var(--fine); margin-bottom: 6px; }
+    .hero-sample {
+      text-align: center;
+      padding: 48px 16px 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+    .hero-sample h1 {
+      margin: 0 0 16px;
+      font-size: clamp(32px, 5.8vw, 72px);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1.18;
+    }
+    .hero-sample .g { color: var(--green); }
+    .hero-sample .lead { color: var(--muted); font-size: 18px; max-width: 38em; margin: 0 auto 24px; }
+    .badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; list-style: none; padding: 0; margin: 0; }
+    .badges li { border-radius: 999px; padding: 8px 14px; font-size: 14px; font-weight: 600; border: 1px solid; }
+    .badges li:nth-child(1) { background: #ecfdf5; color: #047857; border-color: #a7f3d0; }
+    .badges li:nth-child(2) { background: #eff6ff; color: #1d4ed8; border-color: #bfdbfe; }
+    .badges li:nth-child(3) { background: #fff7ed; color: #c2410c; border-color: #fed7aa; }
+    .badges li:nth-child(4) { background: #f5f3ff; color: #6d28d9; border-color: #ddd6fe; }
+    .row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+    .auth {
+      background: var(--green); color: #fff; border: 0; border-radius: var(--radius);
+      padding: 8px 16px; font: 600 14px/1 var(--font);
+    }
+    .cta {
+      height: 56px; background: var(--green); color: #fff; border: 0; border-radius: var(--radius);
+      padding: 0 28px; font: 700 16px/1 var(--font); box-shadow: 0 1px 2px rgba(22,163,74,.25);
+    }
+    .paste {
+      background: var(--band); border: 1px solid var(--line); border-radius: 6px;
+      padding: 6px 12px; font: 600 14px var(--font); color: #334155;
+    }
+    .ghost {
+      background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 10px 16px; font: 14px var(--font);
+    }
+    .pill {
+      display: inline-flex; align-items: center; border-radius: 999px; padding: 8px 14px;
+      background: var(--green); color: #fff; font-size: 14px; text-decoration: none;
+    }
+    .field {
+      height: 56px; width: min(420px, 100%); border: 1px solid #cbd5e1; border-radius: var(--radius);
+      padding: 0 20px; font: 16px var(--font);
+    }
+    .field:focus { outline: 0; border-color: var(--green); box-shadow: 0 0 0 4px rgba(22,163,74,.12); }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .card {
+      background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 20px; box-shadow: 0 1px 2px rgba(15,23,42,.04); text-align: center;
+    }
+    .n {
+      width: 48px; height: 48px; margin: 0 auto 16px; border-radius: var(--radius);
+      background: var(--green-soft); color: var(--green-dark); display: grid; place-items: center;
+      font-weight: 900; font-size: 18px; box-shadow: inset 0 0 0 1px #bbf7d0;
+    }
+    .card h3 { margin: 0 0 8px; font-size: 15px; }
+    .card p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.65; }
+    .why { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .ico { width: 48px; height: 48px; margin: 0 auto 16px; border-radius: var(--radius); display: grid; place-items: center; font-weight: 800; }
+    .ico-a { background: #ecfdf5; color: #059669; box-shadow: inset 0 0 0 1px #a7f3d0; }
+    .ico-b { background: #eff6ff; color: #2563eb; box-shadow: inset 0 0 0 1px #bfdbfe; }
+    .ico-c { background: #f5f3ff; color: #7c3aed; box-shadow: inset 0 0 0 1px #ddd6fe; }
+    .ico-d { background: #f0fdfa; color: #0f766e; box-shadow: inset 0 0 0 1px #99f6e4; }
+    .faq {
+      border: 1px solid var(--line); border-radius: var(--radius); padding: 16px;
+      box-shadow: 0 1px 2px rgba(15,23,42,.04); max-width: 768px;
+    }
+    .faq summary { font-weight: 700; font-size: 14px; cursor: pointer; }
+    .foot {
+      margin-top: 48px; background: var(--ink); color: #cbd5e1; padding: 40px 24px;
+      border-radius: var(--radius);
+    }
+    .nav-demo {
+      display: flex; align-items: center; gap: 8px; height: 64px; padding: 0 24px;
+      border: 1px solid var(--line); border-radius: var(--radius);
+      background: rgba(255,255,255,.95);
+    }
+    .brand { font-weight: 800; font-size: 20px; letter-spacing: -0.03em; }
+    .nav-demo a { padding: 8px 12px; border-radius: var(--radius); font-size: 14px; color: #334155; text-decoration: none; }
+    @media (max-width: 720px) {
+      .cards, .why { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1 class="page">柚见下载 · light catalog</h1>
+    <p class="meta">Tokens from video-tool-c-web, measured 2026-09-18. Matches DESIGN.md. Not the rejected flatten.</p>
+
+    <h2 class="sec">1. Colors</h2>
+    <div class="swatches">
+      <div class="swatch"><div class="chip" style="background:#16a34a"></div><p><strong>green</strong>#16a34a</p></div>
+      <div class="swatch"><div class="chip" style="background:#15803d"></div><p><strong>green-dark</strong>#15803d</p></div>
+      <div class="swatch"><div class="chip" style="background:#ecfdf3"></div><p><strong>green-soft</strong>#ecfdf3</p></div>
+      <div class="swatch"><div class="chip" style="background:#020617"></div><p><strong>ink</strong>#020617</p></div>
+      <div class="swatch"><div class="chip" style="background:#0f172a"></div><p><strong>text</strong>#0f172a</p></div>
+      <div class="swatch"><div class="chip" style="background:#475569"></div><p><strong>muted</strong>#475569</p></div>
+      <div class="swatch"><div class="chip" style="background:#e2e8f0"></div><p><strong>line</strong>#e2e8f0</p></div>
+      <div class="swatch"><div class="chip" style="background:#f8fafc"></div><p><strong>band</strong>#f8fafc</p></div>
+      <div class="swatch"><div class="chip" style="background:#dc2626"></div><p><strong>danger</strong>#dc2626</p></div>
+    </div>
+
+    <h2 class="sec">2. Type</h2>
+    <div class="type-row"><div class="label">display 72 / 800 / -0.04em</div><div style="font-size:48px;font-weight:800;letter-spacing:-0.04em;line-height:1.18">下载主流平台视频和图片</div></div>
+    <div class="type-row"><div class="label">lead 18–20 / 400 / 1.7</div><div style="font-size:18px;color:#475569">贴上分享链接，立刻提取高清视频和图片。</div></div>
+    <div class="type-row"><div class="label">h2 clamp 22–30</div><div style="font-size:28px;letter-spacing:-0.02em">使用教程</div></div>
+    <div class="type-row"><div class="label">body 16 / 1.85</div><div>柚见下载是在线视频图片保存工具。</div></div>
+    <div class="type-row"><div class="label">caption 14 #64748b</div><div style="font-size:14px;color:#64748b">整段分享文案一起贴也行。</div></div>
+    <div class="type-row"><div class="label">platform 12 #94a3b8</div><div style="font-size:12px;color:#94a3b8">支持抖音 / 快手 / B站等公开内容。</div></div>
+
+    <h2 class="sec">3. Hero (locked)</h2>
+    <div class="hero-sample">
+      <h1><span class="g">无水印 原画质 不用装</span><br>下载主流平台视频和图片</h1>
+      <p class="lead">贴上分享链接，立刻提取高清视频和图片。整段文案也行。</p>
+      <ul class="badges">
+        <li>✓ 无水印</li>
+        <li>✓ 原画质</li>
+        <li>✓ 整段也能贴</li>
+        <li>✓ 不用安装</li>
+      </ul>
+    </div>
+
+    <h2 class="sec">4. Nav + buttons + field</h2>
+    <div class="nav-demo">
+      <span class="brand">柚见下载</span>
+      <a href="#">使用教程</a>
+      <a href="#">支持平台</a>
+      <span style="margin-left:auto"></span>
+      <button class="auth" type="button">登录</button>
+    </div>
+    <div class="row" style="margin-top:16px">
+      <input class="field" placeholder="粘贴链接，整段文案也行" />
+      <button class="paste" type="button">粘贴</button>
+      <button class="cta" type="button">一键提取</button>
+      <button class="ghost" type="button">关闭</button>
+      <a class="pill" href="#">下载</a>
+    </div>
+
+    <h2 class="sec">5. Step cards</h2>
+    <div class="cards">
+      <div class="card"><div class="n">1</div><h3>复制链接</h3><p>点分享，复制链接。整段文案一起复制也行。</p></div>
+      <div class="card"><div class="n">2</div><h3>粘贴进来</h3><p>贴到上方输入框，点「一键提取」。</p></div>
+      <div class="card"><div class="n">3</div><h3>保存到本地</h3><p>选视频或图片，下载到你的设备。</p></div>
+    </div>
+
+    <h2 class="sec">6. Why cards</h2>
+    <div class="why">
+      <div class="card"><div class="ico ico-a">↓</div><h3>高清无水印</h3><p>取原始地址，不二次压画质。</p></div>
+      <div class="card"><div class="ico ico-b">▣</div><h3>视频和图集</h3><p>一条结果里视频、封面、图片都能下。</p></div>
+      <div class="card"><div class="ico ico-c">≡</div><h3>整段也能贴</h3><p>推广文案一起复制也没关系。</p></div>
+      <div class="card"><div class="ico ico-d">○</div><h3>不用安装</h3><p>打开网页就能用。</p></div>
+    </div>
+
+    <h2 class="sec">7. FAQ</h2>
+    <details class="faq" open>
+      <summary>怎么用？</summary>
+      <p style="margin:12px 0 0;color:#475569;font-size:14px">复制链接，贴到输入框，点一键提取。</p>
+    </details>
+
+    <div class="foot">
+      <strong style="color:#fff">页脚 ink #020617</strong>
+      <p style="color:#94a3b8;font-size:14px">五列链接 · 底栏 13px #64748b</p>
+    </div>
+  </div>
+</body>
+</html>
