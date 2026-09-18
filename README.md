@@ -51,7 +51,7 @@ This repo holds **own products** and **extracted public landings** in the same C
 | [Webflow](https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/webflow/DESIGN.md) | 营销站完成度 | 蓝强调、动效优先 |
 | [Airbnb](https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/airbnb/DESIGN.md) | 消费级圆角、胶囊标签 | 珊瑚红、大摄影 |
 | [Stripe](https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/stripe/DESIGN.md) | （便捷下载 CTA 已是紫渐变，勿再叠） | 签名紫当柚见皮肤 |
-| [Linear](https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/linear/DESIGN.md) / Vercel / Cursor | 不要当解析落地页气质 | 开发者黑白精密 |
+| [Linear](https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/linear.app/DESIGN.md) / Vercel / Cursor | 不要当解析落地页气质 | 开发者黑白精密 |
 
 ## What's Inside Each DESIGN.md
 

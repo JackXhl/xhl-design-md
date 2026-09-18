@@ -131,7 +131,6 @@ components:
   step-card:
     padding: 20px
     rounded: 8px
-  dialog: {}
   footer:
     background: "#020617"
     columns: 4
