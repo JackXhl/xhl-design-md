@@ -1,22 +1,39 @@
 # Contributing
 
-本仓库只收**我们自己产品**的 DESIGN.md，格式对齐 [awesome-design-md](https://github.com/VoltAgent/awesome-design-md)。
+This repository is a curated collection of DESIGN.md files, in the same shape as [VoltAgent/awesome-design-md](https://github.com/VoltAgent/awesome-design-md): nine Stitch sections, YAML front matter, `preview.html`, `preview-dark.html`, and a README Collection grouped by **product class**.
 
-## 新增一个站点
+We accept:
 
-1. 从现网量 token，不要凭记忆或「更好看」改写
-2. 建 `design-md/<slug>/`
-3. 写满九段 + YAML 头（见 `design-md/youjian/DESIGN.md`）
-4. 补 `preview.html` 和 `preview-dark.html`（自包含，token 写在 `:root`）
-5. 在根 README Collection 加一条
-6. 若有被否改版，写进第 1 节 Locked identity
+1. **Own products** (example: 柚见下载)
+2. **Extracted public sites** measured from live CSS (example: [便捷下载](https://parse.flyinglife.cn/))
 
-## 改已有文件
+We do **not** accept wholesale copies of someone else's DESIGN.md from awesome-design-md. Point to those files from `references/` instead.
 
-对照活站或对应前端仓库 CSS。改 hex / 字号 / 圆角必须同步 preview。
+## New site
 
-不要从 awesome-design-md 整文件搬品牌 DESIGN.md 进来。对标只写在 `references/`。
+1. **Classify first.** Pick or add a Collection heading in the same style as awesome-design-md (`### Video Downloaders & Parser Landings`, not “misc”). The heading is the product class, not “ours vs theirs”. Ownership goes in the one-line blurb (`Own product` / `Extracted from <url>`).
+2. Measure the live page. Read computed CSS. Do not invent a nicer palette.
+3. Create `design-md/<slug>/`
+4. Fill YAML + all nine sections (see `design-md/youjian/DESIGN.md` or `design-md/flyinglife/DESIGN.md`)
+5. Add self-contained `preview.html` and `preview-dark.html` (`:root` tokens). If the site has no page-level dark theme, say so — only catalog overlays / chrome that exist.
+6. Add one Collection bullet in the README under the right `###` heading. Bump the count badge if you keep one.
+7. Record rejected redesigns under section 1 Locked identity.
 
-## Skill
+### Classification cheat sheet
 
-改交互规则时同步 `skills/`，并视情况更新视频项目里的 `.cursor/skills/youjian-c-web-ui/SKILL.md`。
+| Live site looks like | Collection heading |
+|---|---|
+| 中文消费落地页 + 贴链接解析框（柚见 / 便捷下载 / SnapAny） | `### Video Downloaders & Parser Landings` |
+| 几乎无标题的纯工具壳（Cobalt） | 先开 issue：可能是同一大类的子类，不要塞进柚见皮肤 |
+| 开发者文档 / IDE / 部署 | 不要新造条目；链到 awesome-design-md 对应类 |
+| 金融 / 设计工具 / 媒体品牌 | 同上，只指路 |
+
+## Improve an existing file
+
+Compare against the live site (or the owning frontend repo). Hex, type, radius, and spacing changes must update both previews.
+
+Do not “correct” measured values onto an 8px grid, and do not mix 柚见 tokens into 便捷下载 or the reverse.
+
+## Skills
+
+Interactive rules live in `skills/`. The extract flow is `skills/extract-design-md`. Youjian UI work also has a Cursor skill in the video repo.

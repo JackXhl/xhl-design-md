@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>便捷下载 · DESIGN.md preview</title>
+  <style>
+    :root {
+      --primary: #6366f1;
+      --primary-dark: #4f46e5;
+      --secondary: #8b5cf6;
+      --accent: #07c160;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #1e293b;
+      --muted: #64748b;
+      --fine: #94a3b8;
+      --line: #e2e8f0;
+      --tab: #f1f5f9;
+      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      --grad: linear-gradient(135deg, #6366f1, #8b5cf6);
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: var(--font);
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.5;
+    }
+    .wrap { max-width: 1152px; margin: 0 auto; padding: 48px 24px 80px; }
+    h1.page { font-size: 32px; margin: 0 0 8px; }
+    .meta { color: var(--muted); margin: 0 0 40px; }
+    h2.sec { font-size: 22px; margin: 48px 0 16px; }
+    .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
+    .swatch { border: 1px solid var(--line); border-radius: var(--radius-sm); overflow: hidden; background: var(--card); }
+    .swatch .chip { height: 72px; }
+    .swatch p { margin: 0; padding: 8px 10px; font-size: 12px; color: var(--muted); }
+    .swatch strong { display: block; color: var(--text); font-size: 13px; }
+    .type-row { padding: 16px 0; border-bottom: 1px solid var(--line); }
+    .type-row .label { font-size: 12px; color: var(--fine); margin-bottom: 6px; }
+    .grad-text {
+      background: var(--grad);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+    }
+    .hero-sample {
+      text-align: center;
+      padding: 48px 16px 32px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      background: var(--card);
+    }
+    .hero-sample h1 {
+      margin: 0 0 16px;
+      font-size: 48px;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+    .hero-sample .lead { color: var(--muted); font-size: 18px; margin: 0 0 8px; }
+    .badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; list-style: none; padding: 0; margin: 20px 0 0; }
+    .badges li {
+      border-radius: 100px; padding: 6px 14px; font-size: 13px; font-weight: 500;
+      background: rgba(7, 193, 96, 0.08); color: var(--accent); border: 1px solid rgba(7, 193, 96, 0.2);
+    }
+    .row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+    .nav-demo {
+      display: flex; align-items: center; gap: 12px; padding: 16px 32px;
+      border: 1px solid var(--line); border-radius: var(--radius-sm);
+      background: rgba(255,255,255,.8);
+    }
+    .brand { font-weight: 700; font-size: 20px; }
+    .logo { width: 36px; height: 36px; border-radius: 10px; background: var(--grad); }
+    .outline {
+      background: transparent; color: var(--primary); border: 1.5px solid var(--primary);
+      border-radius: var(--radius-sm); padding: 10px 20px; font: 500 14px/1 var(--font);
+    }
+    .outline:hover { background: var(--primary); color: #fff; }
+    .parse-card {
+      background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-xl);
+      padding: 32px; box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+    .parse-row { display: flex; gap: 12px; margin-bottom: 12px; }
+    .field {
+      flex: 1; padding: 16px 20px; border: 2px solid var(--line); border-radius: var(--radius-md);
+      font: 16px var(--font); background: var(--bg);
+    }
+    .field:focus { outline: 0; border-color: var(--primary); background: #fff; box-shadow: 0 0 0 4px rgba(99,102,241,.1); }
+    .cta {
+      padding: 16px 32px; border: 0; border-radius: var(--radius-md); color: #fff;
+      font: 500 16px/1 var(--font); background: var(--grad);
+      box-shadow: 0 4px 12px rgba(99,102,241,.3);
+    }
+    .tip { text-align: center; font-size: 13px; color: var(--fine); margin: 0; }
+    .prompt {
+      margin-top: 16px; text-align: center; padding: 40px;
+      background: linear-gradient(135deg, #eff6ff, #f5f3ff);
+      border: 1px solid #c7d2fe; border-radius: var(--radius-lg);
+    }
+    .prompt h3 { margin: 0 0 8px; font-size: 20px; }
+    .prompt p { color: var(--muted); margin: 0 0 20px; }
+    .prompt .cta { padding: 10px 20px; border-radius: var(--radius-sm); font-size: 14px; }
+    .trust {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+      background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-lg);
+      padding: 32px 24px; text-align: center;
+    }
+    .stat {
+      font-size: 36px; font-weight: 700; line-height: 1.2;
+      background: linear-gradient(135deg, #07c160, #6366f1);
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .stat span { font-size: 16px; }
+    .trust p { margin: 4px 0 0; font-size: 14px; color: var(--muted); }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .card {
+      background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-lg);
+      padding: 32px; text-align: center;
+    }
+    .ico {
+      width: 56px; height: 56px; margin: 0 auto 16px; border-radius: var(--radius-md);
+      background: linear-gradient(135deg, rgba(99,102,241,.1), rgba(139,92,246,.1));
+      color: var(--primary); display: grid; place-items: center; font-weight: 700;
+    }
+    .t-ico {
+      width: 56px; height: 56px; margin: 0 auto 16px; border-radius: 50%;
+      background: var(--grad); color: #fff; display: grid; place-items: center; font-weight: 700;
+    }
+    .card h3 { margin: 0 0 8px; font-size: 18px; }
+    .card h4 { margin: 0 0 8px; font-size: 17px; font-weight: 600; }
+    .card p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.6; }
+    .amber {
+      display: inline-block; padding: 4px 14px; border-radius: 999px;
+      background: rgba(245,158,11,.1); color: #f59e0b; font-size: 14px; margin-bottom: 12px;
+    }
+    .platforms { display: flex; gap: 20px; overflow: auto; padding: 10px 0; }
+    .plat {
+      flex: 0 0 160px; padding: 20px 16px; background: var(--card);
+      border: 1px solid var(--line); border-radius: var(--radius-lg); text-align: center;
+    }
+    .plat .dot { width: 56px; height: 56px; margin: 0 auto 12px; border-radius: 14px; background: var(--grad); }
+    .plat h4 { margin: 0 0 4px; font-size: 15px; }
+    .plat p { margin: 0; font-size: 12px; color: var(--muted); }
+    .commit {
+      background: linear-gradient(135deg, rgba(7,193,96,.04), rgba(99,102,241,.04));
+      border: 1px solid var(--line); border-radius: var(--radius-xl); padding: 56px 40px; text-align: center;
+    }
+    .commit h2 { font-size: 28px; margin: 0 0 12px; }
+    .commit-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 900px; margin: 24px auto 0; }
+    .commit-item {
+      background: var(--card); padding: 28px 20px; border-radius: var(--radius-md);
+      border: 1px solid var(--line);
+    }
+    .commit-item h4 { margin: 0 0 8px; font-size: 16px; }
+    .commit-item p { margin: 0; font-size: 13px; color: var(--muted); line-height: 1.6; }
+    .modal-demo {
+      max-width: 440px; background: var(--card); border-radius: var(--radius-xl);
+      box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1); padding: 40px;
+    }
+    .login-tabs { display: flex; gap: 8px; margin: 0 0 28px; background: var(--tab); padding: 4px; border-radius: var(--radius-md); }
+    .tab { flex: 1; padding: 10px; border: 0; background: transparent; color: var(--muted); font: 500 14px var(--font); border-radius: var(--radius-sm); }
+    .tab.on { background: #fff; color: var(--text); box-shadow: 0 1px 2px rgb(0 0 0 / 0.05); }
+    .form label { display: block; font-size: 14px; font-weight: 500; margin-bottom: 8px; }
+    .form input { width: 100%; padding: 12px 16px; border: 1.5px solid var(--line); border-radius: var(--radius-sm); font: 15px var(--font); }
+    .form .cta { width: 100%; margin-top: 8px; padding: 10px 20px; border-radius: var(--radius-sm); }
+    .foot {
+      margin-top: 48px; text-align: center; padding: 40px 20px 20px;
+      border-top: 1px solid var(--line); color: var(--muted);
+    }
+    .foot .sub { color: var(--accent); font-size: 13px; letter-spacing: 1px; }
+    @media (max-width: 768px) {
+      .hero-sample h1 { font-size: 28px; }
+      .parse-row, .cards, .commit-grid, .trust { grid-template-columns: 1fr; }
+      .trust { grid-template-columns: 1fr 1fr; }
+      .parse-row { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1 class="page">便捷下载 · light catalog</h1>
+    <p class="meta">Tokens from parse.flyinglife.cn, measured 2026-09-18 at 1440×900. Category: Video Downloaders &amp; Parser Landings. Not Youjian.</p>
+
+    <h2 class="sec">1. Colors</h2>
+    <div class="swatches">
+      <div class="swatch"><div class="chip" style="background:#6366f1"></div><p><strong>primary</strong>#6366f1</p></div>
+      <div class="swatch"><div class="chip" style="background:#8b5cf6"></div><p><strong>secondary</strong>#8b5cf6</p></div>
+      <div class="swatch"><div class="chip" style="background:linear-gradient(135deg,#6366f1,#8b5cf6)"></div><p><strong>cta / title</strong>135deg</p></div>
+      <div class="swatch"><div class="chip" style="background:#07c160"></div><p><strong>accent mint</strong>#07c160</p></div>
+      <div class="swatch"><div class="chip" style="background:#f8fafc"></div><p><strong>canvas</strong>#f8fafc</p></div>
+      <div class="swatch"><div class="chip" style="background:#ffffff"></div><p><strong>card</strong>#ffffff</p></div>
+      <div class="swatch"><div class="chip" style="background:#1e293b"></div><p><strong>text</strong>#1e293b</p></div>
+      <div class="swatch"><div class="chip" style="background:#64748b"></div><p><strong>muted</strong>#64748b</p></div>
+      <div class="swatch"><div class="chip" style="background:#e2e8f0"></div><p><strong>line</strong>#e2e8f0</p></div>
+      <div class="swatch"><div class="chip" style="background:#f59e0b"></div><p><strong>tutorial amber</strong>#f59e0b</p></div>
+    </div>
+
+    <h2 class="sec">2. Type</h2>
+    <div class="type-row"><div class="label">display 48 / 800 / lh 1.2</div><div style="font-size:48px;font-weight:800;line-height:1.2"><span class="grad-text">无广告 无后台 无推送</span></div></div>
+    <div class="type-row"><div class="label">display line 2 · #1e293b</div><div style="font-size:48px;font-weight:800;line-height:1.2">无水印下载主流平台图片视频</div></div>
+    <div class="type-row"><div class="label">lead 18 / #64748b</div><div style="font-size:18px;color:#64748b">输入链接，即刻获取高清图与视频源地址</div></div>
+    <div class="type-row"><div class="label">section 28 / 700</div><div style="font-size:28px;font-weight:700">支持平台</div></div>
+    <div class="type-row"><div class="label">stat 36 gradient mint→indigo</div><div class="stat">100<span>+</span></div></div>
+    <div class="type-row"><div class="label">caption 13 #94a3b8</div><div style="font-size:13px;color:#94a3b8">支持国内外近 100 家主流平台无水印下载</div></div>
+
+    <h2 class="sec">3. Hero (locked)</h2>
+    <div class="hero-sample">
+      <h1><span class="grad-text">无广告 无后台 无推送</span><br>无水印下载主流平台图片视频</h1>
+      <p class="lead">输入链接，即刻获取高清图与视频源地址</p>
+      <ul class="badges">
+        <li>✓ 无广告</li>
+        <li>✓ 无后台</li>
+        <li>✓ 无推送</li>
+        <li>✓ 稳定运营 7 年</li>
+      </ul>
+    </div>
+
+    <h2 class="sec">4. Nav + parse card</h2>
+    <div class="nav-demo">
+      <span class="logo"></span>
+      <span class="brand">便捷下载</span>
+      <span style="margin-left:auto"></span>
+      <button class="outline" type="button">问题反馈</button>
+      <button class="outline" type="button">登录</button>
+    </div>
+    <div class="parse-card" style="margin-top:16px">
+      <div class="parse-row">
+        <input class="field" placeholder="粘贴要解析的链接，例如：https://..." />
+        <button class="cta" type="button">一键提取</button>
+      </div>
+      <p class="tip">支持国内外近 100 家主流平台无水印下载</p>
+    </div>
+    <div class="prompt">
+      <h3>登录后即可使用</h3>
+      <p>邮箱登录，会员畅享全部功能</p>
+      <button class="cta" type="button">立即登录</button>
+    </div>
+
+    <h2 class="sec">5. Trust stats</h2>
+    <div class="trust">
+      <div><div class="stat">7<span>年</span></div><p>稳定运营</p></div>
+      <div><div class="stat">100<span>+</span></div><p>支持平台</p></div>
+      <div><div class="stat">1300<span>万+</span></div><p>下载量</p></div>
+      <div><div class="stat">80<span>万+</span></div><p>用户数</p></div>
+    </div>
+
+    <h2 class="sec">6. Platform cards</h2>
+    <div class="platforms">
+      <div class="plat"><div class="dot"></div><h4>抖音</h4><p>解析抖音无水印视频</p></div>
+      <div class="plat"><div class="dot"></div><h4>小红书</h4><p>解析小红书视频</p></div>
+      <div class="plat"><div class="dot"></div><h4>B站</h4><p>解析B站视频</p></div>
+    </div>
+
+    <h2 class="sec">7. Tutorial + features</h2>
+    <div style="text-align:center;margin-bottom:24px"><span class="amber">使用教程</span></div>
+    <div class="cards">
+      <div class="card"><div class="t-ico">1</div><h4>复制视频链接</h4><p>在抖音、小红书等平台打开作品，通过分享复制链接。</p></div>
+      <div class="card"><div class="t-ico">2</div><h4>粘贴并解析</h4><p>回到本页，将链接粘贴到输入框。</p></div>
+      <div class="card"><div class="t-ico">3</div><h4>下载保存</h4><p>完成后下载无水印视频或图集。</p></div>
+    </div>
+    <div class="cards" style="margin-top:24px">
+      <div class="card"><div class="ico">HD</div><h3>高清无水印</h3><p>原图画质提取，告别烦人水印</p></div>
+      <div class="card"><div class="ico">→</div><h3>视频直链解析</h3><p>秒级返回源地址，直接播放下载</p></div>
+      <div class="card"><div class="ico">⏱</div><h3>极速响应</h3><p>秒级解析，无需漫长等待</p></div>
+    </div>
+
+    <h2 class="sec">8. Commit + login modal</h2>
+    <div class="commit">
+      <h2>我们的承诺</h2>
+      <p style="color:var(--muted);font-size:15px">自 2019 年上线以来，始终坚持做一个干净、纯粹的工具</p>
+      <div class="commit-grid">
+        <div class="commit-item"><h4>无广告</h4><p>不展示任何开屏广告、信息流广告、弹窗广告</p></div>
+        <div class="commit-item"><h4>无后台</h4><p>不常驻进程，不会在后台统计任何数据</p></div>
+        <div class="commit-item"><h4>无推送</h4><p>不发送任何营销通知，不打扰你的使用</p></div>
+      </div>
+    </div>
+    <div class="modal-demo" style="margin-top:24px">
+      <div style="text-align:center;margin-bottom:32px">
+        <h2 style="font-size:28px;margin:0 0 8px">欢迎回来</h2>
+        <p style="color:var(--muted);margin:0">登录后使用全部功能</p>
+      </div>
+      <div class="login-tabs">
+        <button class="tab on" type="button">登录</button>
+        <button class="tab" type="button">注册</button>
+      </div>
+      <div class="form">
+        <label>邮箱</label>
+        <input type="email" placeholder="邮箱" />
+        <div style="height:20px"></div>
+        <label>密码</label>
+        <input type="password" placeholder="密码" />
+        <button class="cta" type="button">登录</button>
+      </div>
+    </div>
+
+    <div class="foot">
+      <p>隐私政策 | 用户协议 | 联系我们</p>
+      <p class="sub">无广告 · 无后台 · 无推送 · 绿色纯净</p>
+      <p>© 2019 便捷下载 All rights reserved.</p>
+    </div>
+  </div>
+</body>
+</html>

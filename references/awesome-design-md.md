@@ -2,7 +2,9 @@
 
 源：[VoltAgent/awesome-design-md](https://github.com/VoltAgent/awesome-design-md)
 
-柚见 C 端是白底中文下载落地页。下面这些条目适合**结构借鉴**。色值、字体、圆角一律以 `design-md/youjian/DESIGN.md` 为准，禁止把柚见画成对应品牌。
+本仓库 Collection 按产品类分组（和 awesome 的 `### Fintech & Crypto` 同一套写法）。柚见与便捷下载都属于 **Video Downloaders & Parser Landings**，但皮肤不同：柚见用 `design-md/youjian/DESIGN.md`，便捷下载用 `design-md/flyinglife/DESIGN.md`，禁止互抄 hex。
+
+下面这些 awesome 条目适合**结构借鉴**。色值、字体、圆角一律以目标站点自己的 DESIGN.md 为准。
 
 ## 必读（视频下载网页）
 
@@ -24,8 +26,9 @@
 | Tesla / Apple | 摄影全屏，柚见没有素材体系 |
 | Nintendo 2001 / Dell 1996 | 怀旧实验，不是产品方向 |
 
-## 活站（仓库外）
+## 活站（仓库外或已拆）
 
+- [便捷下载](https://parse.flyinglife.cn/)：**已拆** → `design-md/flyinglife/`。同类落地页，slate + indigo/violet 渐变 CTA + 薄荷信任胶囊。48/800，不是柚见 72。
 - [SnapAny](https://snapany.com/)：SEO 落地页，H1 约 48/700，输入框顶边约 277px。可学「框近」，不要把柚见 H1 从 72/800 砍掉（已试过，不好看）。
 - [Cobalt](https://cobalt.tools/)：页面即工具，几乎无营销。可学优先级，不要抄空白和等宽。
 
