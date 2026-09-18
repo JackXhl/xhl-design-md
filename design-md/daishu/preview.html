@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>袋鼠下载 · DESIGN.md preview</title>
+  <style>
+    :root {
+      --indigo: #4f46e5;
+      --indigo-hover: #4338ca;
+      --blue: #2563eb;
+      --ink: #020617;
+      --text: #0f172a;
+      --muted: #475569;
+      --fine: #64748b;
+      --line: #e2e8f0;
+      --canvas: #ffffff;
+      --band: #f8fafc;
+      --input-bd: #cbd5e1;
+      --radius: 8px;
+      --font: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: var(--font); color: var(--text); background: var(--canvas); line-height: 1.5; }
+    .wrap { max-width: 1152px; margin: 0 auto; padding: 48px 24px 80px; }
+    h1.page { font-size: 32px; margin: 0 0 8px; }
+    .meta { color: var(--muted); margin: 0 0 40px; }
+    h2.sec { font-size: 22px; margin: 48px 0 16px; }
+    .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
+    .swatch { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+    .swatch .chip { height: 72px; }
+    .swatch p { margin: 0; padding: 8px 10px; font-size: 12px; color: var(--muted); }
+    .swatch strong { display: block; color: var(--text); font-size: 13px; }
+    .type-row { padding: 16px 0; border-bottom: 1px solid var(--line); }
+    .type-row .label { font-size: 12px; color: var(--fine); margin-bottom: 6px; }
+    .grad-brand {
+      font-size: 20px; font-weight: 900;
+      background: linear-gradient(to right, #2563eb, #4f46e5);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .hero-sample { text-align: center; padding: 48px 16px 24px; border: 1px solid var(--line); border-radius: var(--radius); }
+    .hero-sample h1 {
+      margin: 0 0 20px; font-size: 60px; font-weight: 900; line-height: 1.06;
+      letter-spacing: -1.5px; color: var(--ink);
+    }
+    .hero-sample .lead { color: var(--muted); font-size: 20px; line-height: 28px; max-width: 38em; margin: 0 auto 28px; }
+    .badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; list-style: none; padding: 0; margin: 0; }
+    .badges li { border-radius: 9999px; padding: 8px 14px; font-size: 14px; font-weight: 600; border: 1px solid; }
+    .badges li:nth-child(1) { background: #ecfdf5; color: #047857; border-color: #a7f3d0; }
+    .badges li:nth-child(2) { background: #eff6ff; color: #1d4ed8; border-color: #bfdbfe; }
+    .badges li:nth-child(3) { background: #f5f3ff; color: #6d28d9; border-color: #ddd6fe; }
+    .badges li:nth-child(4) { background: #fff7ed; color: #c2410c; border-color: #fed7aa; }
+    .nav-demo {
+      display: flex; align-items: center; gap: 8px; height: 64px; padding: 0 24px;
+      border: 1px solid var(--line); border-radius: var(--radius); background: rgba(255,255,255,.95);
+    }
+    .nav-demo a { padding: 8px 12px; border-radius: var(--radius); font-size: 14px; color: #374151; text-decoration: none; }
+    .login { background: var(--blue); color: #fff; border: 0; border-radius: var(--radius); padding: 8px 16px; font: 500 14px/1 var(--font); }
+    .row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+    .field-wrap { position: relative; flex: 1; min-width: 240px; height: 56px; }
+    .field {
+      width: 100%; height: 56px; border: 1px solid var(--input-bd); border-radius: var(--radius);
+      padding: 0 112px 0 20px; font: 16px var(--font); box-shadow: 0 1px 2px rgba(0,0,0,.05);
+    }
+    .field:focus { outline: 0; border-color: #6366f1; box-shadow: 0 0 0 4px #e0e7ff; }
+    .paste {
+      position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
+      background: var(--band); border: 1px solid var(--line); border-radius: 6px;
+      padding: 6px 12px; font: 600 14px var(--font); color: #334155;
+    }
+    .cta {
+      height: 56px; background: var(--indigo); color: #fff; border: 0; border-radius: var(--radius);
+      padding: 0 28px; font: 700 16px/1 var(--font); box-shadow: 0 1px 2px rgba(99,102,241,.2);
+    }
+    .cta:hover { background: var(--indigo-hover); }
+    .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .why { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .card {
+      background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 20px; box-shadow: 0 1px 2px rgba(0,0,0,.05); text-align: center;
+    }
+    .n {
+      width: 48px; height: 48px; margin: 0 auto 16px; border-radius: var(--radius);
+      background: #eef2ff; color: var(--indigo); display: grid; place-items: center;
+      font-weight: 900; font-size: 18px; box-shadow: inset 0 0 0 1px #e0e7ff;
+    }
+    .ico { width: 48px; height: 48px; margin: 0 auto 16px; border-radius: var(--radius); display: grid; place-items: center; font-weight: 800; }
+    .ico-a { background: #ecfdf5; box-shadow: inset 0 0 0 1px #d1fae5; }
+    .ico-b { background: #eff6ff; box-shadow: inset 0 0 0 1px #dbeafe; }
+    .ico-c { background: #f5f3ff; box-shadow: inset 0 0 0 1px #ede9fe; }
+    .ico-d { background: #fff7ed; box-shadow: inset 0 0 0 1px #ffedd5; }
+    .ico-e { background: #fff1f2; box-shadow: inset 0 0 0 1px #ffe4e6; }
+    .ico-f { background: #f0fdfa; box-shadow: inset 0 0 0 1px #ccfbf1; }
+    .card h3 { margin: 0 0 8px; font-size: 14px; }
+    .card p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.6; }
+    .faq { border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; max-width: 768px; box-shadow: 0 1px 2px rgba(0,0,0,.05); }
+    .faq[open] { border-color: #c7d2fe; background: rgba(238,242,255,.3); }
+    .faq summary { font-weight: 700; font-size: 14px; cursor: pointer; }
+    .fab {
+      width: 56px; height: 56px; border-radius: 9999px; border: 0; color: #fff; font-size: 24px;
+      background: linear-gradient(to bottom right, #059669, #0d9488);
+      box-shadow: 0 10px 15px rgba(0,0,0,.1);
+    }
+    .foot { margin-top: 48px; background: var(--ink); color: #cbd5e1; padding: 40px 24px; border-radius: var(--radius); }
+    .foot h3 { color: #fff; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; margin: 0 0 16px; }
+    .cols { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; }
+    @media (max-width: 768px) {
+      .hero-sample h1 { font-size: 36px; letter-spacing: -0.5px; }
+      .cards, .why, .cols { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1 class="page">袋鼠下载 · light catalog</h1>
+    <p class="meta">Tokens from daishuxiazai.com, measured 2026-09-18 at 1440×900. Category: Video Downloaders &amp; Parser Landings. Same layout family as 柚见, indigo/blue skin — not Youjian green.</p>
+
+    <h2 class="sec">1. Colors</h2>
+    <div class="swatches">
+      <div class="swatch"><div class="chip" style="background:#4f46e5"></div><p><strong>indigo CTA</strong>#4f46e5</p></div>
+      <div class="swatch"><div class="chip" style="background:#4338ca"></div><p><strong>indigo hover</strong>#4338ca</p></div>
+      <div class="swatch"><div class="chip" style="background:#2563eb"></div><p><strong>blue login</strong>#2563eb</p></div>
+      <div class="swatch"><div class="chip" style="background:linear-gradient(to right,#2563eb,#4f46e5)"></div><p><strong>wordmark</strong>blue→indigo</p></div>
+      <div class="swatch"><div class="chip" style="background:#020617"></div><p><strong>ink</strong>#020617</p></div>
+      <div class="swatch"><div class="chip" style="background:#0f172a"></div><p><strong>text</strong>#0f172a</p></div>
+      <div class="swatch"><div class="chip" style="background:#475569"></div><p><strong>muted</strong>#475569</p></div>
+      <div class="swatch"><div class="chip" style="background:#e2e8f0"></div><p><strong>line</strong>#e2e8f0</p></div>
+      <div class="swatch"><div class="chip" style="background:#f8fafc"></div><p><strong>band</strong>#f8fafc</p></div>
+      <div class="swatch"><div class="chip" style="background:linear-gradient(to bottom right,#059669,#0d9488)"></div><p><strong>chat FAB</strong>emerald→teal</p></div>
+    </div>
+
+    <h2 class="sec">2. Type</h2>
+    <div class="type-row"><div class="label">display 60 / 900 / lh 1.06 / -1.5px</div><div style="font-size:60px;font-weight:900;line-height:1.06;letter-spacing:-1.5px;color:#020617">免费在线视频图片下载工具</div></div>
+    <div class="type-row"><div class="label">lead 20 / #475569</div><div style="font-size:20px;color:#475569">从 YouTube、TikTok、Instagram、X 等平台下载无水印的高清视频和图片。</div></div>
+    <div class="type-row"><div class="label">brand 20 / 900 clipped</div><div class="grad-brand">袋鼠下载</div></div>
+    <div class="type-row"><div class="label">section 30 / 700</div><div style="font-size:30px;font-weight:700;letter-spacing:-0.75px;color:#020617">使用步骤</div></div>
+
+    <h2 class="sec">3. Hero (locked)</h2>
+    <div class="hero-sample">
+      <h1>免费在线视频图片下载工具</h1>
+      <p class="lead">从 YouTube、TikTok、Instagram、X 等平台下载无水印的高清视频和图片。无需登录，完全免费。</p>
+      <ul class="badges">
+        <li>✓ 100% 免费</li>
+        <li>✓ 无水印</li>
+        <li>✓ 高清画质</li>
+        <li>✓ 无需登录</li>
+      </ul>
+    </div>
+
+    <h2 class="sec">4. Nav + parse</h2>
+    <div class="nav-demo">
+      <span class="grad-brand">袋鼠下载</span>
+      <a href="#">支持平台</a>
+      <a href="#">使用教程</a>
+      <span style="margin-left:auto"></span>
+      <button class="login" type="button">登录</button>
+    </div>
+    <div class="row" style="margin-top:16px">
+      <div class="field-wrap">
+        <input class="field" placeholder="在此粘贴您的链接" />
+        <button class="paste" type="button">粘贴</button>
+      </div>
+      <button class="cta" type="button">获取</button>
+    </div>
+
+    <h2 class="sec">5. Step cards (4)</h2>
+    <div class="cards">
+      <div class="card"><div class="n">1</div><h3>复制链接</h3><p>从平台复制想要下载的网址链接。</p></div>
+      <div class="card"><div class="n">2</div><h3>粘贴链接</h3><p>贴到上方输入框，点击获取。</p></div>
+      <div class="card"><div class="n">3</div><h3>解析内容</h3><p>自动分析链接并提取媒体文件。</p></div>
+      <div class="card"><div class="n">4</div><h3>下载保存</h3><p>选择格式和画质，保存到设备。</p></div>
+    </div>
+
+    <h2 class="sec">6. Why cards (3×2)</h2>
+    <div class="why">
+      <div class="card"><div class="ico ico-a">免</div><h3>完全免费</h3><p>无隐藏费用，无订阅。</p></div>
+      <div class="card"><div class="ico ico-b">速</div><h3>极速下载</h3><p>几秒钟内开始，无需等待。</p></div>
+      <div class="card"><div class="ico ico-c">隐</div><h3>隐私保护</h3><p>不存储下载历史或个人数据。</p></div>
+      <div class="card"><div class="ico ico-d">多</div><h3>多平台支持</h3><p>支持 6+ 主流平台。</p></div>
+      <div class="card"><div class="ico ico-e">HD</div><h3>高清画质</h3><p>最高 1080p，图片原分辨率。</p></div>
+      <div class="card"><div class="ico ico-f">○</div><h3>无需安装</h3><p>浏览器里直接用。</p></div>
+    </div>
+
+    <h2 class="sec">7. FAQ + FAB</h2>
+    <details class="faq" open>
+      <summary>使用这个工具是免费的吗？</summary>
+      <p style="margin:12px 0 0;color:#475569;font-size:14px">是的，袋鼠下载提供的功能是免费的。用户需确保合法使用。</p>
+    </details>
+    <p style="margin-top:16px"><button class="fab" type="button">💬</button></p>
+
+    <div class="foot">
+      <div class="cols">
+        <div><strong class="grad-brand" style="color:#fff;background:none;-webkit-text-fill-color:#fff">袋鼠下载</strong><p>免费在线视频图片保存工具。</p></div>
+        <div><h3>在线工具</h3><p>抖音视频下载</p></div>
+        <div><h3>使用教程</h3><p>全部教程</p></div>
+        <div><h3>关于我们</h3><p>隐私政策</p></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

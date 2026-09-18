@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>袋鼠下载 · dark catalog</title>
+  <style>
+    :root {
+      --indigo: #4f46e5;
+      --blue: #2563eb;
+      --ink: #020617;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --line: #1e293b;
+      --font: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: var(--font); background: var(--ink); color: var(--text); }
+    .wrap { max-width: 1152px; margin: 0 auto; padding: 48px 24px 80px; }
+    h1.page { font-size: 32px; margin: 0 0 8px; }
+    .meta { color: var(--muted); margin: 0 0 24px; }
+    .note {
+      border: 1px solid var(--line); background: #0f172a; border-radius: 8px;
+      padding: 16px 20px; color: var(--muted); font-size: 14px; line-height: 1.7;
+    }
+    h2.sec { font-size: 22px; margin: 48px 0 16px; }
+    .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
+    .swatch { border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: #0f172a; }
+    .swatch .chip { height: 72px; }
+    .swatch p { margin: 0; padding: 8px 10px; font-size: 12px; color: var(--muted); }
+    .swatch strong { display: block; color: var(--text); font-size: 13px; }
+    .cols { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; font-size: 14px; }
+    .cols h3 { color: #fff; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; margin: 0 0 16px; }
+    .cols a { display: block; color: #cbd5e1; text-decoration: none; padding-bottom: 10px; }
+    .bar { border-top: 1px solid var(--line); margin-top: 32px; padding-top: 20px; color: #64748b; font-size: 13px; }
+    .login { background: var(--blue); color: #fff; border: 0; border-radius: 8px; padding: 8px 16px; }
+    .cta { background: var(--indigo); color: #fff; border: 0; border-radius: 8px; padding: 10px 20px; font-weight: 700; }
+    .fab {
+      width: 56px; height: 56px; border-radius: 9999px; border: 0; color: #fff; font-size: 24px;
+      background: linear-gradient(to bottom right, #059669, #0d9488);
+    }
+    @media (max-width: 768px) { .cols { grid-template-columns: 1fr 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1 class="page">袋鼠下载 · dark catalog</h1>
+    <p class="meta">daishuxiazai.com 没有整页 dark mode。深色只出现在页脚和客服 FAB。不要据此把落地页改成黑底。</p>
+    <p class="note">Shipped dark surfaces: footer <code>#020617</code>, body <code>#cbd5e1</code>, labels white 12/700 tracking 0.16em, bar line <code>#1e293b</code>. Chat FAB emerald→teal on the light page. Login/CTA stay blue/indigo on white.</p>
+
+    <h2 class="sec">Footer tokens</h2>
+    <div class="swatches">
+      <div class="swatch"><div class="chip" style="background:#020617"></div><p><strong>footer bg</strong>#020617</p></div>
+      <div class="swatch"><div class="chip" style="background:#cbd5e1"></div><p><strong>footer body</strong>#cbd5e1</p></div>
+      <div class="swatch"><div class="chip" style="background:#1e293b"></div><p><strong>footer line</strong>#1e293b</p></div>
+      <div class="swatch"><div class="chip" style="background:#4f46e5"></div><p><strong>indigo still</strong>#4f46e5</p></div>
+      <div class="swatch"><div class="chip" style="background:#2563eb"></div><p><strong>blue still</strong>#2563eb</p></div>
+      <div class="swatch"><div class="chip" style="background:linear-gradient(to bottom right,#059669,#0d9488)"></div><p><strong>FAB</strong>#059669→#0d9488</p></div>
+    </div>
+
+    <h2 class="sec">Footer layout</h2>
+    <div class="cols">
+      <div>
+        <strong style="color:#fff;font-size:20px">袋鼠下载</strong>
+        <p style="color:#94a3b8">免费在线视频图片保存工具，支持抖音、TikTok、小红书等。</p>
+      </div>
+      <div><h3>在线工具</h3><a href="#">抖音视频下载</a><a href="#">小红书图片下载</a></div>
+      <div><h3>使用教程</h3><a href="#">全部教程</a><a href="#">新手必读</a></div>
+      <div><h3>关于我们</h3><a href="#">隐私政策</a><button class="login" type="button">登录</button></div>
+    </div>
+    <div class="bar">© 2025 袋鼠下载. All Rights Reserved.</div>
+    <p style="margin-top:24px"><button class="fab" type="button">💬</button> <button class="cta" type="button">获取</button></p>
+  </div>
+</body>
+</html>

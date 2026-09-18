@@ -1,7 +1,7 @@
 # xhl-design-md
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-![DESIGN.md Count](https://img.shields.io/badge/DESIGN.md%20count-2-10b981?style=classic)
+![DESIGN.md Count](https://img.shields.io/badge/DESIGN.md%20count-3-10b981?style=classic)
 
 Curated collection of [DESIGN.md](https://stitch.withgoogle.com/docs/design-md/overview/) files. Layout matches [VoltAgent/awesome-design-md](https://github.com/VoltAgent/awesome-design-md): one folder per site, nine-section `DESIGN.md`, plus `preview.html` / `preview-dark.html`.
 
@@ -30,6 +30,7 @@ This repo holds **own products** and **extracted public landings** in the same C
 
 - [**柚见下载 C 端**](design-md/youjian/DESIGN.md) · [light](design-md/youjian/preview.html) · [dark](design-md/youjian/preview-dark.html) — Own product. White canvas, single green `#16a34a`, two-line clamp 32–72 / 800 hero, four rainbow pills, 56px paste field, 8px cards, near-black footer. Locked to the 2026-09-18 restored live site, not the rejected flatten.
 - [**便捷下载**](design-md/flyinglife/DESIGN.md) · [light](design-md/flyinglife/preview.html) · [dark](design-md/flyinglife/preview-dark.html) — Extracted from [parse.flyinglife.cn](https://parse.flyinglife.cn/). Slate canvas `#f8fafc`, 48/800 hero with indigo→violet clipped title, mint trust pills `#07c160`, 24px parse card, gradient CTA. Same product class as 柚见, different skin — do not mix tokens.
+- [**袋鼠下载**](design-md/daishu/DESIGN.md) · [light](design-md/daishu/preview.html) · [dark](design-md/daishu/preview-dark.html) — Extracted from [daishuxiazai.com](https://www.daishuxiazai.com/). Youjian’s layout cousin: white canvas, rainbow pills, 56px paste, 8px cards, `#020617` footer. Skin is blue→indigo wordmark, indigo-600「获取」, blue-600 login, H1 60/900 one line. Do not swap with 柚见 green or 便捷下载 24r cards.
 
 同类活站、尚未拆条（只指路，没有本仓库 DESIGN.md）：
 

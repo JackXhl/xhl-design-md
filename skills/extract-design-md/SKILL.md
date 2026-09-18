@@ -32,7 +32,7 @@ description: "从现网站点拆 DESIGN.md 并按 xhl-design-md / awesome-design
 
 | 活站 | Collection |
 |---|---|
-| 中文消费落地页 + 贴链接解析（柚见、便捷下载、SnapAny） | `### Video Downloaders & Parser Landings` |
+| 中文消费落地页 + 贴链接解析（柚见、便捷下载、袋鼠下载、SnapAny） | `### Video Downloaders & Parser Landings` |
 | 空白工具壳（Cobalt） | 先当子类说明，不要塞进柚见皮肤 |
 | 开发者工具 / 金融 / 媒体品牌 | 不在本仓库拆全文，链到 awesome-design-md |
 
